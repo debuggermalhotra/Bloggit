@@ -1,9 +1,10 @@
-{%  extends "base.html" %}
+<!--extend form base layout-->
+{% extends "base.html" %}
 
 {%  block content %}
 <h1>Sign In</h1>
 <form action="" method="post" name="login">
-    {{ from.hidden_tag() }} #will get replaced by a hidden field that implements the CSRF prevention that I enabled in the configuration
+    {{ form.hidden_tag() }} #will get replaced by a hidden field that implements the CSRF prevention that I enabled in the configuration
     <p>
         Please enter your OpenId:<br>
         {{ form.openid(size=80) }}<br>
