@@ -1,3 +1,4 @@
+#script to describe the user table
 from app import db
 
 class User(db.Model):
