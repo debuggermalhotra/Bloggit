@@ -20,3 +20,8 @@ class Post(db.Model):
 
     def __repr__(self): #__repr__ tells python how to print objects of this class
         return '<Post %r>' % (self.body)
+    
+    
+    
+    
+   
