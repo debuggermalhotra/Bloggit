@@ -22,10 +22,10 @@ class User(db.Model):
 
     def get_id(self):
         try:
-            return unicode(self.id)
+            return unicode(self.id)   #for python2
         except NameError:
-            return str(self.id)
-        
+            return str(self.id)       #for python3
+
 
     def __repr__(self): #__repr__ tells python how to print objects of this class
         return '<User %r>' % (self.nickname)

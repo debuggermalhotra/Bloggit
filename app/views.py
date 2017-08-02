@@ -8,11 +8,11 @@ def index():
     user={"nickname":"chetan"} #random user
     posts=[#fake array of posts
             {
-                'author':{'nickname':'Jonah'},
-                'body': 'In Delhi, it feels like the summer of 69'
+                'author':{'nickname':'Trickyman'},
+                'body': 'In Delhi, it feels like the summer of 69....more like 69 degrees! :p
             },
             {
-                'author':{'nickname':'Amy'},
+                'author':{'nickname':'AmyPal'},
                 'body':'What is up with the USA?'
                 }
             
