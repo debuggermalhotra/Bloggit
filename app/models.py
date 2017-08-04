@@ -7,19 +7,22 @@ class User(db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     posts=db.relationship('Post',backref='author',lazy='dynamic')
 
+    #returns True unless the object represents a user that should not be allowed to authenticate for some reason.
     @property
     def is_authenticated(self):
         return True
 
-    @@property
+    # returns True for users unless they are inactive, for example because they have been banned.
+    @property
     def is_active(self):
         return True
 
+    #returns True only for fake users that are not supposed to log in to the system.
     @property
     def is_anonymous(self):
         return True
 
-
+    #returns a unique identifier for the user, in unicode format(for both py2 and py3).
     def get_id(self):
         try:
             return unicode(self.id)   #for python2
@@ -39,8 +42,3 @@ class Post(db.Model):
 
     def __repr__(self): #__repr__ tells python how to print objects of this class
         return '<Post %r>' % (self.body)
-    
-    
-    
-    
-   
