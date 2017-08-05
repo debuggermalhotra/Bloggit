@@ -79,3 +79,9 @@ def after_login(resp): #resp contains the response/info. returned by OpenID prov
         session.pop('remember_me', None)
         login_user(user, remember=remember_me) #registering this is a valid login
         return redirect(request.args.get('next') or url_for('index'))
+
+#log out function
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
