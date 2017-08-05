@@ -1,11 +1,18 @@
 #script to describe the user table
 from app import db
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, UserMixin
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
+    social_id=db.Column(db.String(64), nullable=False, unique=True)
     posts=db.relationship('Post',backref='author',lazy='dynamic')
+
+    @lm.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
 
     #returns True unless the object represents a user that should not be allowed to authenticate for some reason.
     @property
