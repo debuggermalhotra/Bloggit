@@ -1,5 +1,5 @@
 from flask import *
-
+from .__init__ import *
 from flask_login import *
 from app import app
 from .forms import LoginForm
@@ -54,7 +54,7 @@ def login():
 
 
 #since this function is decorated with befor_request, it will run before the view function each time a request is received
-@app.befor_request
+@app.before_request
 def befor_request():
     g.user=current_user #current_user global is set by Flask-Login
 
@@ -68,7 +68,7 @@ def after_login(resp): #resp contains the response/info. returned by OpenID prov
     user=User.query.filter_by(email=resp.email).first()
     if user is None:
         nickname=resp.nickname
-        if nickname is None or nickname="":
+        if nickname is None or nickname=="":
             nickname=User(nickname=nickname,email=resp.email)
             db.session.add(user)
             db.session.commit()
