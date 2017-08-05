@@ -77,7 +77,7 @@ def after_login(resp): #resp contains the response/info. returned by OpenID prov
     if 'remember_me' in session:
         remember_me=session['remember_me']
         session.pop('remember_me', None)
-        login_user(user, remember=remember_me) #registering this is a valid login
+        login_user(user) #registering this is a valid login
         return redirect(request.args.get('next') or url_for('index'))
 
 #log out function

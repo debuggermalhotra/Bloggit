@@ -10,7 +10,8 @@
         <div>
             <a href="{{url_for('index')}}"><img src="images/bloggit.png"></img> </a>
             {% if g.user.is_authenticated %}
-            | <a href="{{ url_for('logout') }}">"Logout"</a>
+                | <a href="{{ url_for('user',nickname=g.user.nickname) }}">Your Profile</a>
+                | <a href="{{ url_for('logout') }}">"Logout"</a>
             {% endif %}
 
         </div>
