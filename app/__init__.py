@@ -12,6 +12,6 @@ db = SQLAlchemy(app)
 lm=LoginManager()
 lm.init_app(app)
 lm.login_view='login'
-oid=OpenId(app, os.path.join(basedir,'tmp'))  #flask-openid needs a apth to a temp folder where files can be stored
+oid=OpenID(app, os.path.join(basedir,'tmp'))  #flask-openid needs a apth to a temp folder where files can be stored
 
 from app import views, models

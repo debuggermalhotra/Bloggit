@@ -1,4 +1,5 @@
 from flask import *
+
 from flask_login import *
 from app import app
 from .forms import LoginForm
@@ -12,7 +13,7 @@ def index():
     posts=[
             {
                 'author':{'nickname':'Trickyman'},
-                'body': 'In Delhi, it feels like the summer of 69....more like 69 degrees! :p
+                'body': 'In Delhi, it feels like the summer of 69....more like 69 degrees! :p'
             },
             {
                 'author':{'nickname':'AmyPal'},
