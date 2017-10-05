@@ -4,7 +4,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 CSRF_ENABLED=True
 SECRET_KEY = 'robin101!'
 
-app.config['OAUTH_CREDENTIALS'] = {
+OAUTH_CREDENTIALS= {
     'facebook': {
         'id': '1605033112901375',
         'secret': 'd39ff299df4ac9aa595c2ba25a0eff47'
@@ -25,16 +25,12 @@ SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir,'db_repository')   #this is the f
 
 
 
-OPENID_PROVIDERS = [
- {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'},
-OPENID_PROVIDERS = [
- {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'},
-                {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
-                    {'name': 'AOL', 'url': 'http://openid.aol.com/<username>'},
-                        {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
-                            {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
 
-                {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
-                    {'name': 'AOL', 'url': 'http://openid.aol.com/<username>'},
-                        {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
-                            {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
+OPENID_PROVIDERS = [
+    {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'},
+    {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
+    {'name': 'AOL', 'url': 'http://openid.aol.com/<username>'},
+    {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
+    {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
+
+
